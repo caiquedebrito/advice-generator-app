@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Advice generator app</title>
+  <style type="text/css" media="all">
+    body{
+      min-height: 96vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: hsl(218, 23%, 16%);
+    }
+    
+    .container{
+      width: 300px;
+      background-color: hsl(217, 19%, 24%);
+      position: relative;
+      text-align: center;
+      border-radius: 1rem;
+      padding: 1.1rem;
+    }
+    
+    .header{
+      color: hsl(150, 100%, 66%);
+      font-size: 18px;
+    }
+    
+    .advice-container {
+      color: hsl(193, 38%, 86%);
+      font-size: 1.5rem;
+      margin: 10px 0;
+    }
+    
+    .divider {
+      margin: 10px 0;
+    }
+    
+    .btn{
+      background-color: hsl(150, 100%, 66%);
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 90%;
+      left: 50%;
+      transform: translateX(-50%);
+      
+    }
+    
+    .load {
+      animation: load 1s infinite linear;
+    }
+    
+    @keyframes load{
+      to {transform: translateX(-50%) rotate(360deg);}
+    }
+  </style>
+</head>
+<body onload="handleAdvice()">
+  <div class="container">
+    <div class="header">
+      Advice #<span id="number"></span>
+    </div>
+    <div class="advice-container">
+      
+    </div>
+    <div class="divider">
+      <img src="images/pattern-divider-mobile.svg">
+    </div>
+    <div class="btn">
+      <img src="images/icon-dice.svg">
+    </div>
+  </div>
+  
+  
+  <script>
+    const btn = document.querySelector('.btn')
+    const adviceContainer = document.querySelector('.advice-container')
+    const numberOfAdvice = document.querySelector('#number')
+    
+    async function handleAdvice(){
+      btn.classList.add('load')
+      const {id, advice} = await generateAdvice()
+      displayAdvice(id, advice)
+      btn.classList.remove('load')
+      console.log(id, advice)
+    }
+    
+    function generateAdvice() {
+      return fetch('https://api.adviceslip.com/advice')
+        .then(res => res.json())
+        .then(data => data.slip)
+    }
+    
+    function displayAdvice(id, advice) {
+      numberOfAdvice.textContent = id
+      adviceContainer.textContent = `" ${advice} "`
+    }
+
+    
+    btn.addEventListener('click', handleAdvice)
+  </script>
+</body>
+</html>
