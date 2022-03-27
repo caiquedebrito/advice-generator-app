@@ -1,0 +1,69 @@
+body{
+  min-height: 96vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(218, 23%, 16%);
+  
+}
+
+.container{
+  width: 300px;
+  background-color: hsl(217, 19%, 24%);
+  position: relative;
+  text-align: center;
+  border-radius: 1rem;
+  padding: 1.3rem;
+}
+
+.header{
+  color: hsl(150, 100%, 66%);
+  font-size: 18px;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 1.25rem 0;
+}
+
+.advice-container {
+  color: hsl(193, 38%, 86%);
+  margin: 10px 0;
+  font-size: 28px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+}
+
+.divider {
+  margin: 20px 0;
+}
+
+.btn{
+  background-color: hsl(150, 100%, 66%);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 94%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: .5s linear;
+  cursor: pointer;
+}
+
+.btn:hover {
+  box-shadow: 10px 10px 5px hsl(193, 38%, 86%), -10px 10px 5px hsl(193, 38%, 86%), 10px -10px 5ox hsl(193, 38%, 86%),
+  -10px -10px 5px hsl(193, 38%, 86%);
+}
+
+.btn img{
+  width: 20px;
+}
+
+.load {
+  animation: load 1s infinite linear;
+}
+
+@keyframes load{
+  to {transform: translateX(-50%) rotate(360deg);}
+}
