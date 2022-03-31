@@ -18,7 +18,7 @@ body{
 
 .header{
   color: hsl(150, 100%, 66%);
-  font-size: 18px;
+  font-size: 1.3rem;
   font-family: 'Courier New', Courier, monospace;
   margin: 1.25rem 0;
 }
@@ -35,10 +35,15 @@ body{
   margin: 20px 0;
 }
 
+.divider img {
+  max-width: 470px;
+  width: 100%;
+}
+
 .btn{
   background-color: hsl(150, 100%, 66%);
-  width: 35px;
-  height: 35px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -52,8 +57,7 @@ body{
 }
 
 .btn:hover {
-  box-shadow: 10px 10px 5px hsl(193, 38%, 86%), -10px 10px 5px hsl(193, 38%, 86%), 10px -10px 5ox hsl(193, 38%, 86%),
-  -10px -10px 5px hsl(193, 38%, 86%);
+  box-shadow: 4px 4px 15px #ffffff54, -4px 4px 15px white, 4px -4px 15px white, -4px -4px 15px white;
 }
 
 .btn img{

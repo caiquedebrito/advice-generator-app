@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style/style.css" type="text/css" media="all"/>
   <script src="script/script.js" defer></script>
-  <title>Frontend Mentor | Advice generator app</title>
+  <title>Advice generator app</title>
 </head>
 <body onload="handleAdvice()">
   <div class="container">
@@ -19,7 +19,11 @@
     <div class="advice-container">
     </div>
     <div class="divider">
-      <img src="images/pattern-divider-mobile.svg">
+      <img srcset="images/pattern-divider-mobile.svg 295w,
+      images/pattern-divider-desktop.svg 444w"
+          sizes="(max-width: 375px) 295px,
+          444px"
+           src="images/pattern-divider-desktop.svg">
     </div>
     <div class="btn">
       <img src="images/icon-dice.svg">
